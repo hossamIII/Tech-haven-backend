@@ -32,6 +32,7 @@
     "@medusajs/draft-order": "2.10.3",
     "@medusajs/framework": "2.11.1",
     "@medusajs/medusa": "2.11.1",
+    "@medusajs/utils": "2.11.1",
     "@medusajs/workflows-sdk": "^2.11.1"
   },
   "devDependencies": {
