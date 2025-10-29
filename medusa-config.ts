@@ -27,7 +27,7 @@ export default defineConfig({
 
   admin: {
     backendUrl: process.env.MEDUSA_BACKEND_URL ?? "http://localhost:9000",
-    disable: false,
+    disable: true,
   },
 
   modules: [],
