@@ -1,6 +1,7 @@
 {
   "name": "medusa-starter-default",
   "version": "0.0.1",
+  "private": true,
   "description": "A starter for Medusa projects.",
   "author": "Medusa (https://medusajs.com)",
   "license": "MIT",
@@ -28,6 +29,7 @@
     "@medusajs/admin-sdk": "2.11.1",
     "@medusajs/cli": "2.11.1",
     "@medusajs/dashboard": "^2.11.1",
+    "@medusajs/draft-order": "2.10.3",
     "@medusajs/framework": "2.11.1",
     "@medusajs/medusa": "2.11.1",
     "@medusajs/workflows-sdk": "^2.11.1"
@@ -51,5 +53,10 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "pnpm": {
+    "overrides": {
+      "@medusajs/draft-order": "2.10.3"
+    }
   }
 }
