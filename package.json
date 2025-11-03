@@ -14,15 +14,15 @@
     "medusa"
   ],
   "scripts": {
-    "build": "cross-env NODE_ENV=development medusa build",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=2048 NODE_ENV=development medusa build",
     "migrate": "medusa db:migrate && medusa db:sync-links",
     "migrate:rebuild": "medusa db:rollback && medusa db:migrate && medusa db:sync-links",
     "seed": "medusa exec ./src/scripts/seed.ts",
     "dev": "medusa develop",
     "start": "medusa start",
-    "start:prod": "pnpm run migrate && cross-env NODE_ENV=development medusa build && cross-env NODE_ENV=production medusa start",
+    "start:prod": "pnpm run migrate && cross-env NODE_ENV=production medusa start",
     "test:integration:http": "TEST_TYPE=integration:http NODE_OPTIONS=--experimental-vm-modules jest --silent=false --runInBand --forceExit",
-    "test:integration:modules": "TEST_TYPE=integration:modules NODE_OPTIONS=--experimental-vm-modules jest --silent=false --runInBand --forceExit",
+    "test:integration:modules": "TEST_TYPE=integration:modules NODE_OPTIONS=--experimental-vm-modules jest --silent --runInBand --forceExit",
     "test:unit": "TEST_TYPE=unit NODE_OPTIONS=--experimental-vm-modules jest --silent --runInBand --forceExit"
   },
   "dependencies": {
@@ -38,7 +38,8 @@
     "@medusajs/medusa": "2.11.1",
     "@medusajs/ui": "4.0.25",
     "@medusajs/utils": "2.11.1",
-    "@medusajs/workflows-sdk": "^2.11.1"
+    "@medusajs/workflows-sdk": "^2.11.1",
+    "pg": "^8.16.3"
   },
   "devDependencies": {
     "@medusajs/test-utils": "2.11.1",
